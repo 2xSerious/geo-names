@@ -22,6 +22,25 @@ $('#searchCity').click(function() {
             $('#gmap_canvas').attr('src', gUrl);
             $('input').val('');
 
+            $.ajax({
+                url: "/geo/libs/php/weather.php",
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    lng: lng,
+                    lat: lat
+                },
+                success: function(result) {
+                    console.log(result['weatherObservation']);
+                    var response = result['weatherObservation'];
+                    var temp = response['temperature'];
+                    var humidity = response['humidity'];
+                    $('#txtTemp').html("Temperature: " + temp + "&#8451;");
+                    $('#txtHumidity').html("Humidity: " + humidity + "%");
+
+                }
+            })
+
             
 
         }
