@@ -26,26 +26,38 @@
           <td>Find lat/lng for Address</td>
           <td>
             <label for="qterm">Query Term:</label>
-            <input class="col-md-4" type="text" name="qterm" id="qterm" placeholder="ex. State Street" >
+            <input
+              class="col-md-4"
+              type="text"
+              name="qterm"
+              id="qterm"
+              placeholder="ex. State Street"
+            />
           </td>
           <td>
             <button id="btnId" class="btn btn-primary">Submit</button>
           </td>
         </tr>
         <tr>
-            <td>Search City</td>
-            <td>
-                <label for="city">City: </label>
-                <input class = "col-md-4" type="text" name="city" id="city" placeholder="ex. London">
-            </td>
-            <td>
-                <button id="searchCity" class="btn btn-primary">Submit</button>
-            </td>
+          <td>Search City</td>
+          <td>
+            <label for="city">City: </label>
+            <input
+              class="col-md-4"
+              type="text"
+              name="city"
+              id="city"
+              placeholder="ex. London"
+            />
+          </td>
+          <td>
+            <button id="searchCity" class="btn btn-primary">Submit</button>
+          </td>
         </tr>
       </tbody>
     </table>
 
-    <div class="container">
+    <div class="container" id="wrapper">
       <h1>Results</h1>
       <table>
         <tr>
@@ -55,7 +67,7 @@
           <td id="txtLat"></td>
         </tr>
         <tr>
-            <td id="txtAddress"></td>
+          <td id="txtAddress"></td>
         </tr>
       </table>
       <div class="mapouter">
@@ -81,6 +93,10 @@
     <script
       type="application/javascript"
       src="libs/javascript/script.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="libs/javascript/search.js"
     ></script>
   </body>
 </html>

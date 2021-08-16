@@ -1,10 +1,11 @@
 $('#btnId').click(function() {
 
+   
     var term = $('#qterm').val();
     term = term.replace(/\s/g, "%20");
 
     $.ajax({
-        url: "http://localhost/geo/libs/php/getGeoAddress.php",
+        url: "/geo/libs/php/getGeoAddress.php",
         type: 'POST',
         dataType: 'json',
         data: {
