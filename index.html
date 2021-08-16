@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="libs/css/iframe.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">API name</th>
+          <th scope="col">API description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Find lat/lng for Address</td>
+          <td>
+            <label for="qterm">Query Term:</label>
+            <input class="col-md-4" type="text" name="qterm" id="qterm" placeholder="ex. State Street" >
+          </td>
+          <td>
+            <button id="btnId" class="btn btn-primary">Submit</button>
+          </td>
+        </tr>
+        <tr>
+            <td>Search City</td>
+            <td>
+                <label for="city">City: </label>
+                <input class = "col-md-4" type="text" name="city" id="city" placeholder="ex. London">
+            </td>
+            <td>
+                <button id="searchCity" class="btn btn-primary">Submit</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container">
+      <h1>Results</h1>
+      <table>
+        <tr>
+          <td id="txtLng"></td>
+        </tr>
+        <tr>
+          <td id="txtLat"></td>
+        </tr>
+        <tr>
+            <td id="txtAddress"></td>
+        </tr>
+      </table>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            width="460"
+            height="395"
+            id="gmap_canvas"
+            src=""
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="application/javascript"
+      src="libs/javascript/jquery-3.6.0.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="libs/javascript/script.js"
+    ></script>
+  </body>
+</html>
