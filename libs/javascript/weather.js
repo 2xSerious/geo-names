@@ -1,5 +1,7 @@
-$('#searchCity').click(function() {
 
+
+$('#searchCity').click(function() {
+    
     var term = $('#city').val();
     
     $.ajax({
@@ -14,8 +16,10 @@ $('#searchCity').click(function() {
             var response = result['geonames'][0];
             var lng = response['lng'];
             var lat = response['lat'];
+            var city = response['name']
             var address = response['name'] + ", " + response['countryName'] + ", " + response['countryCode'];
-            var gUrl = `https://maps.google.com/maps?q=london&t=&z=9&ie=UTF8&iwloc=&output=embed`;
+            var gUrl = `https://maps.google.com/maps?q=${city}&t=&z=11&ie=UTF8&iwloc=&output=embed`;
+            
             $('#txtLng').html("Longitude: " + lng);
             $('#txtLat').html("Latitude: " + lat);
             $('#txtAddress').html("Address: " + address);
@@ -35,11 +39,15 @@ $('#searchCity').click(function() {
                     var response = result['weatherObservation'];
                     var temp = response['temperature'];
                     var humidity = response['humidity'];
-                    $('#txtTemp').html("Temperature: " + temp + "&#8451;");
-                    $('#txtHumidity').html("Humidity: " + humidity + "%");
+                    var str = `<tr><td>Temperature: ${temp} &#8451;</td></tr><tr><td>Humidity: ${humidity}% </td></tr>`;
+                    $('#txtTitle').html("Weather");
+                    $('#aside').html(str);
 
+                    
+        
                 }
-            })
+            });
+            
 
             
 

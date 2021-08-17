@@ -25,7 +25,7 @@
         <tr>
           <td>Find lat/lng for Address</td>
           <td>
-            <label for="qterm">Query Term:</label>
+            <label for="qterm">Street:</label>
             <input
               class="col-md-4"
               type="text"
@@ -39,7 +39,7 @@
           </td>
         </tr>
         <tr>
-          <td>Search City</td>
+          <td>Weather</td>
           <td>
             <label for="city">City: </label>
             <input
@@ -53,6 +53,22 @@
           <td>
             <button id="searchCity" class="btn btn-primary">Submit</button>
           </td>
+        </tr>
+        <tr>
+            <td>Wikipedia</td>
+            <td>
+                <label for="wikipedia">City: </label>
+                <input
+                 class="col-md-4"
+                 type="text"
+                 name="wikipedia"
+                 id="wikipedia"
+                 placeholder="ex. London"
+            />
+            </td>
+            <td>
+                <button id="wikipediaBtn" class="btn btn-primary">Submit</button>
+            </td>
         </tr>
       </tbody>
     </table>
@@ -85,17 +101,15 @@
           ></iframe>
         </div>
         <div class="col border">
-          <h2 class="text-center">Weather</h2>
-          <table>
+          <h2 class="text-center" id="txtTitle"></h2>
+          <table id="aside">
               <tr>
-                  <td id="txtTemp"></td>
+                  <td id="txtContentOne"></td>
               </tr>
               <tr>
-                  <td id="txtHumidity"></td>
+                  <td id="txtContentTwo"></td>
               </tr>
-              <tr>
-                  <td id="txtDateTime"></td>
-              </tr>
+              
           </table>
         </div>
       </div>
@@ -111,7 +125,11 @@
     ></script>
     <script
       type="application/javascript"
-      src="libs/javascript/search.js"
+      src="libs/javascript/weather.js"
     ></script>
-  </body>
+    <script 
+      type="application/javascript" 
+      src="libs/javascript/wikipedia.js"
+      ></script>
+   
 </html>
